@@ -1,0 +1,35 @@
+<h1>New System</h1>
+<%= form_with scope: :system, local: true do |f| %>
+    <p>
+        <%= f.label :name %>
+            <br>
+            <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :abbreviation %>
+            <br>
+            <%= f.text_field :abbreviation %>
+    </p>
+    <p>
+        <%= f.label :company, "Company" %>:
+            <br>
+            <%= f.text_field :company, list: 'company' %>
+                <datalist id="company">
+                    <option data-value=1 value="Sony"></option>
+                    <option data-value=2 value="Microsoft"></option>
+                </datalist>
+    </p>
+    <p>
+        <%= f.label :type, "System Type" %>:
+            <br>
+            <%= f.text_field :type, list: 'systemType' %>
+                <datalist id="systemType">
+                    <option data-value=1 value="PC"></option>
+                    <option data-value=2 value="Console"></option>
+                </datalist>
+    </p>
+
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
