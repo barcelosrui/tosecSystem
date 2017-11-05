@@ -1,0 +1,20 @@
+
+<h1>Listing Systems</h1>
+
+<table>
+    <tr>
+        <th>Abbreviation</th>
+        <th>Name</th>
+        <th>Company</th>
+    </tr>
+
+ <% @systems.each do |s| %>
+    <tr>
+        <td><%= s.abbreviation %></td>
+        <td><%= s.name %></td>
+        <td><%= s.company %></td>
+        <td><%= s.typeSys %></td>
+     <td><%= link_to 'Show', system_path(s) %></td>
+   </tr>
+ <% end %>
+</table>
